@@ -160,8 +160,7 @@ library(tidyverse)
 
 ID_data <- read_csv('Species_ID_Measurements.csv')
 
-limpets <- ID_data %>% filter( Species == 'Lottia digitalis'| Species == 'Lottia persona' | 
-                                 Species == "Lottia scutum") %>% mutate(Apex_ratio = Apex_mm / Length_mm)
+limpets <- ID_data %>% filter( Species == 'Lottia digitalis'| Species == 'Lottia persona') %>% mutate(Apex_ratio = Apex_mm / Length_mm)
 mussels <-ID_data %>% select(!c(Apex_mm)) %>% filter(Species == 'Mytilus trossulus' | 
                                                        Species == 'Mytilus californianus') %>%
   mutate(Height_Width_ratio = Height_mm / Width_mm)
